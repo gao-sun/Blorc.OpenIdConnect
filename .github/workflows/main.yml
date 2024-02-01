@@ -12,7 +12,6 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        dotnet: ['7.0.x', '8.0.x']
     
     runs-on: ${{ matrix.os }}
 
@@ -22,7 +21,7 @@ jobs:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: ${{ matrix.dotnet }}
+          dotnet-version: '8.0.x'
 
       - name: Build
         working-directory: src/Blorc.OpenIdConnect
